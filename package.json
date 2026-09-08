@@ -1,0 +1,13 @@
+{
+  "name": "jenkins-ci-cd-project",
+  "version": "1.0.0",
+  "description": "Jenkins CI/CD Practice Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
