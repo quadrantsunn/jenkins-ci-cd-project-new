@@ -60,7 +60,7 @@ pipeline {
                     echo === STARTING STAGING CONTAINER ON PORT 3001 ===
                     docker run -d ^
                       --name jenkins-demo-staging ^
-                      -p 3001:3000 ^
+                      -p 3001:3001 ^
                       jenkins-demo-app:%BUILD_NUMBER%
 
                     echo === STAGING CONTAINER STATUS ===
@@ -108,7 +108,7 @@ pipeline {
                     echo === STARTING NEW PRODUCTION CONTAINER ===
                     docker run -d ^
                       --name jenkins-demo ^
-                      -p 3000:3000 ^
+                      -p 3001:3001 ^
                       jenkins-demo-app:%BUILD_NUMBER%
 
                     echo === CONTAINER STATUS ===
@@ -132,7 +132,7 @@ pipeline {
                     docker ps
 
                     echo === HEALTH ENDPOINT ===
-                    curl -f http://localhost:3000/health
+                    curl -f http://localhost:3001/health
                 '''
             }
         }
